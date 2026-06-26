@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yousef Khudher | Purple Team Specialist</title>
+  <style>
+    :root {
+      --bg: #080c18;
+      --bg2: #0b0f1e;
+      --surface: #0f1525;
+      --surface2: #151c30;
+      --accent: #00d4ff;
+      --accent2: #7c3aed;
+      --green: #00ff88;
+      --red: #ff4757;
+      --orange: #ff6b35;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: #1a2440;
+      --border2: #1e2d50;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2.5rem;
+      background: rgba(8,12,24,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'Courier New', monospace; font-size: 1.1rem; color: var(--accent); font-weight: 800; letter-spacing: 3px; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; padding: 7rem 2rem 5rem; overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(0,212,255,0.025) 1px,transparent 1px), linear-gradient(90deg,rgba(0,212,255,0.025) 1px,transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 25s linear infinite;
+    }
+    @keyframes gridMove { to { transform: translateY(50px); } }
+    .hero-glow1 {
+      position: absolute; width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
+      top: 40%; left: 30%; transform: translate(-50%,-50%); pointer-events: none;
+    }
+    .hero-glow2 {
+      position: absolute; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%);
+      top: 60%; left: 70%; transform: translate(-50%,-50%); pointer-events: none;
+    }
+    .hero-content { position: relative; text-align: center; max-width: 860px; }
+
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.8rem; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      border-radius: 999px; padding: 0.35rem 1rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .tag-open { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.35); color: var(--green); }
+    .tag-open::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    .tag-iraq { background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--accent); }
+    .tag-purple { background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.35); color: #a78bfa; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero h1 { font-size: clamp(2.8rem, 6vw, 4.8rem); font-weight: 900; line-height: 1.05; margin-bottom: 0.6rem; }
+    .hero h1 .accent { color: var(--accent); }
+    .hero-sub { font-family: 'Courier New', monospace; font-size: clamp(0.95rem, 2.2vw, 1.2rem); color: var(--green); margin-bottom: 1.2rem; letter-spacing: 1px; min-height: 1.8rem; }
+    .typing::after { content: '|'; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .hero-headline {
+      color: var(--muted); font-size: 0.9rem; max-width: 700px; margin: 0 auto 0.8rem;
+      line-height: 1.7;
+    }
+    .hero-certs-strip {
+      font-family: 'Courier New', monospace; font-size: 0.75rem; color: rgba(0,212,255,0.6);
+      letter-spacing: 1px; margin-bottom: 2rem;
+    }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.8rem 1.8rem; border-radius: 7px; font-size: 0.9rem; font-weight: 700;
+      text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; letter-spacing: 0.5px;
+    }
+    .btn-primary { background: var(--accent); color: #080c18; }
+    .btn-primary:hover { background: #33ddff; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.25); }
+    .btn-purple { background: var(--accent2); color: #fff; }
+    .btn-purple:hover { background: #6d28d9; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(124,58,237,0.3); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border2); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 5.5rem 2rem; }
+    .alt-bg { background: var(--bg2); }
+    .container { max-width: 1150px; margin: 0 auto; }
+    .section-label { font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 3rem; }
+    .section-title span { color: var(--accent); }
+    .section-title .purple { color: #a78bfa; }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── STATS ─── */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 4rem;
+    }
+    @media(max-width:768px){ .stats-bar { grid-template-columns: repeat(2,1fr); } }
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.5rem; text-align: center; transition: border-color 0.2s, transform 0.2s;
+    }
+    .stat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .stat-number { font-size: 2.2rem; font-weight: 900; font-family: 'Courier New', monospace; color: var(--accent); }
+    .stat-number.purple { color: #a78bfa; }
+    .stat-number.green { color: var(--green); }
+    .stat-number.orange { color: var(--orange); }
+    .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; letter-spacing: 0.5px; }
+
+    /* ─── ABOUT ─── */
+    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
+    @media(max-width:768px){ .about-grid { grid-template-columns: 1fr; } }
+    .about-text p { color: var(--muted); margin-bottom: 0.9rem; font-size: 1rem; }
+    .about-text p strong { color: var(--text); }
+    .open-to-work {
+      background: rgba(0,255,136,0.06); border: 1px solid rgba(0,255,136,0.2);
+      border-radius: 10px; padding: 1.2rem 1.5rem; margin-top: 1.5rem;
+    }
+    .otw-title { font-size: 0.75rem; color: var(--green); letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 0.7rem; }
+    .otw-roles { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .otw-role {
+      background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.15);
+      border-radius: 5px; padding: 0.25rem 0.7rem; font-size: 0.8rem; color: var(--text);
+    }
+    .locations { margin-top: 0.8rem; font-size: 0.8rem; color: var(--muted); }
+
+    /* ─── EXPERIENCE ─── */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 6px; bottom: 6px;
+      width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+      border-radius: 2px;
+    }
+    .tl-item { position: relative; margin-bottom: 2.5rem; }
+    .tl-item::before {
+      content: ''; position: absolute; left: -2.4rem; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--bg2);
+      box-shadow: 0 0 10px rgba(0,212,255,0.5);
+    }
+    .tl-item.purple-dot::before { background: var(--accent2); box-shadow: 0 0 10px rgba(124,58,237,0.5); }
+    .tl-company { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.2rem; }
+    .tl-role { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 0.15rem; }
+    .tl-date { font-size: 0.8rem; color: var(--accent); font-family: 'Courier New', monospace; margin-bottom: 0.6rem; }
+    .tl-desc { color: var(--muted); font-size: 0.9rem; }
+    .tl-desc ul { padding-left: 1.2rem; margin-top: 0.4rem; }
+    .tl-desc li { margin-bottom: 0.3rem; }
+    .tl-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+    .tl-tag {
+      background: var(--surface2); border: 1px solid var(--border); border-radius: 4px;
+      padding: 0.15rem 0.6rem; font-size: 0.75rem; color: var(--muted); font-family: 'Courier New', monospace;
+    }
+
+    /* ─── SKILLS ─── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+    .skill-cat {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .skill-cat:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .skill-cat-hd { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+    .sk-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .sk-icon.red   { background: rgba(255,71,87,0.12); }
+    .sk-icon.blue  { background: rgba(0,212,255,0.1); }
+    .sk-icon.green { background: rgba(0,255,136,0.1); }
+    .sk-icon.purple{ background: rgba(124,58,237,0.12); }
+    .sk-icon.orange{ background: rgba(255,107,53,0.12); }
+    .sk-icon.teal  { background: rgba(0,200,200,0.1); }
+    .skill-cat-name { font-weight: 700; font-size: 0.95rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-tag {
+      background: var(--surface2); border: 1px solid var(--border); border-radius: 4px;
+      padding: 0.2rem 0.65rem; font-size: 0.78rem; color: var(--muted); font-family: 'Courier New', monospace;
+    }
+
+    /* ─── PROJECTS ─── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .proj-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;
+      display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s;
+    }
+    .proj-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .proj-card.feat { border-color: rgba(124,58,237,0.4); }
+    .proj-card.feat:hover { border-color: #a78bfa; }
+    .proj-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.7rem; }
+    .proj-name { font-weight: 700; font-size: 0.95rem; font-family: 'Courier New', monospace; color: var(--text); }
+    .proj-badge { font-size: 0.68rem; padding: 0.15rem 0.6rem; border-radius: 999px; white-space: nowrap; }
+    .badge-feat { background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.4); color: #a78bfa; }
+    .badge-priv { background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); color: var(--orange); }
+    .badge-acad { background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.25); color: var(--green); }
+    .proj-desc { color: var(--muted); font-size: 0.88rem; flex: 1; margin-bottom: 1.2rem; }
+    .proj-footer { display: flex; justify-content: space-between; align-items: center; }
+    .proj-lang { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+    .lang-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .py { background: #3572A5; } .cs { background: #178600; } .cpp { background: #f34b7d; } .multi { background: #e34c26; }
+    .proj-link { color: var(--accent); text-decoration: none; font-size: 0.8rem; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
+    .proj-link:hover { color: #33ddff; }
+    .proj-link.disabled { color: var(--muted); cursor: default; }
+
+    /* ─── CTF ─── */
+    .ctf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+    @media(max-width:640px){ .ctf-grid > .ctf-card[style*="span 2"]{ grid-column: span 1 !important; } }
+    .ctf-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.3rem;
+      transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden;
+    }
+    .ctf-card:hover { border-color: var(--orange); transform: translateY(-3px); }
+    .ctf-card.gold { border-color: rgba(255,215,0,0.35); }
+    .ctf-card.gold:hover { border-color: gold; }
+    .ctf-card.gold::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, gold, transparent);
+    }
+    .ctf-rank { font-family: 'Courier New', monospace; font-size: 1.8rem; font-weight: 900; color: var(--orange); margin-bottom: 0.2rem; line-height: 1; }
+    .ctf-rank.gold-rank { color: gold; }
+    .ctf-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .ctf-detail { font-size: 0.8rem; color: var(--muted); }
+
+    /* ─── CERTS ─── */
+    .cert-groups { display: flex; flex-direction: column; gap: 2rem; }
+    .cert-group-label {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+    }
+    .cert-group-label h3 { font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+    .cert-group-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+    .cert-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem;
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      transition: border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit;
+    }
+    .cert-card:hover { border-color: var(--green); transform: translateY(-2px); }
+    .cert-logo {
+      width: 42px; height: 42px; border-radius: 8px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; flex-shrink: 0;
+    }
+    .cert-info { flex: 1; min-width: 0; }
+    .cert-name { font-weight: 700; font-size: 0.88rem; margin-bottom: 0.2rem; }
+    .cert-issuer { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .cert-status { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: var(--green); }
+    .cert-status::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+    .cert-count-note {
+      text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.9rem;
+    }
+    .cert-count-note a { color: var(--accent); text-decoration: none; }
+    .cert-count-note a:hover { text-decoration: underline; }
+
+    /* ─── EDUCATION ─── */
+    .edu-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem;
+      display: flex; align-items: flex-start; gap: 1.5rem; max-width: 700px;
+    }
+    .edu-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .edu-degree { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .edu-school { color: var(--accent); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .edu-date { font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.6rem; }
+    .edu-note { font-size: 0.88rem; color: var(--muted); }
+
+    /* ─── CONTACT ─── */
+    .contact-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .contact-inner > p { color: var(--muted); margin-bottom: 2.5rem; font-size: 1rem; }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.85rem 1.5rem; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; text-decoration: none; color: var(--text); font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .contact-link svg { width: 18px; height: 18px; }
+    .contact-email { font-family: 'Courier New', monospace; color: var(--muted); font-size: 0.85rem; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem; text-align: center;
+      color: var(--muted); font-size: 0.82rem; font-family: 'Courier New', monospace;
+    }
+    footer span { color: var(--accent); }
+
+    @media(max-width:640px){
+      .nav-links { display: none; }
+      .hero-certs-strip { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">&gt; YK_</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#ctf">CTF</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+
+    <div class="hero-tags">
+      <span class="hero-tag tag-open">Open to Work</span>
+      <span class="hero-tag tag-iraq">&#x1f1ee;&#x1f1f6; Iraq</span>
+      <span class="hero-tag tag-purple">Purple Team Specialist</span>
+    </div>
+
+    <h1>Yousef <span class="accent">Khudher</span></h1>
+    <p class="hero-sub"><span class="typing"></span></p>
+
+    <p class="hero-headline">
+      Penetration Tester &amp; Blue Team Specialist with <strong style="color:var(--text)">43 industry certifications</strong>,
+      including all 8 OffSec certs. Ranked <strong style="color:gold">19th globally &amp; 1st in Iraq</strong>
+      at HTB Cyber Apocalypse 2025. Discovered <strong style="color:var(--orange)">500+ vulnerabilities</strong>
+      across HackerOne, global bug bounty platforms, and local/regional companies.
+    </p>
+
+    <p class="hero-certs-strip">
+      OSCP+ &bull; OSWE &bull; OSWP &bull; OSWA &bull; OSDA &bull; OSTH &bull; OSIR &bull; DO-RTA &bull; CRTA &bull; MCRTA &bull; MCBTA &bull; ISO 27001 &bull; ISO 27701 &bull; CCNA &bull; CCNP
+    </p>
+
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+        Projects
+      </a>
+      <a href="#ctf" class="btn btn-purple">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M3 21l1.9-5.7a8.5 8.5 0 113.8 3.8z"/></svg>
+        CTF Achievements
+      </a>
+      <a href="#certifications" class="btn btn-ghost">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        43 Certifications
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+
+    <div class="stats-bar reveal">
+      <div class="stat-card">
+        <div class="stat-number">43</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gold" style="color:gold">1st</div>
+        <div class="stat-label">Iraq — HTB Cyber Apocalypse 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number green">100+</div>
+        <div class="stat-label">Academic Security Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number orange">500+</div>
+        <div class="stat-label">Vulnerabilities Found</div>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="section-label">// about</p>
+        <h2 class="section-title">Who I <span>Am</span></h2>
+        <p>
+          I'm a <strong>Computer Engineering graduate</strong> from the University of Mosul,
+          specializing in cybersecurity. I operate as a <strong>Purple Team Specialist</strong> —
+          bridging offensive red team tactics and defensive blue team operations to deliver
+          end-to-end security coverage.
+        </p>
+        <p>
+          My expertise spans <strong>penetration testing, web exploitation, wireless attacks, threat hunting,
+          incident response, cloud security, and DevSecOps</strong>. I hold all 8 OffSec certifications —
+          a rare achievement — alongside 35+ additional certs from CyberWarfare Labs, Cisco, and other bodies.
+        </p>
+        <p>
+          Through bug bounty programs on <strong>HackerOne</strong> and other global platforms —
+          as well as direct engagements with <strong>local and regional companies in Iraq and the MENA region</strong> —
+          I have discovered and responsibly disclosed <strong>500+ vulnerabilities</strong>,
+          ranging from Critical severity to Medium, across real-world web applications and infrastructure.
+        </p>
+        <p>
+          Beyond offensive work, I am ISO/IEC 27001 &amp; 27701 Lead Auditor certified,
+          enabling me to advise on <strong>governance, compliance, and PIMS frameworks</strong>.
+          I also build open-source security tools and have guided 100+ university projects
+          in network security and cybersecurity to Excellent grades.
+        </p>
+        <p>
+          I speak <strong>Arabic</strong> (native) and <strong>English</strong> (professional).
+          Based in Iraq, open to on-site or remote roles globally.
+        </p>
+
+        <div class="open-to-work">
+          <div class="otw-title">&#x1f7e2; Open to Work</div>
+          <div class="otw-roles">
+            <span class="otw-role">Penetration Tester</span>
+            <span class="otw-role">Information Security Engineer</span>
+            <span class="otw-role">Cyber Threat Hunter</span>
+            <span class="otw-role">InfoSec Officer</span>
+            <span class="otw-role">CISO</span>
+          </div>
+          <div class="locations">&#x1f4cd; Iraq &middot; Türkiye &middot; Qatar &middot; UAE &middot; Saudi Arabia &middot; Remote</div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <p class="section-label">// education</p>
+        <h2 class="section-title" style="margin-bottom:1.5rem">Background</h2>
+        <div class="edu-card">
+          <div class="edu-icon">&#x1f393;</div>
+          <div>
+            <div class="edu-degree">Bachelor of Engineering</div>
+            <div class="edu-school">University of Mosul</div>
+            <div class="edu-date">Computer Engineering &nbsp;|&nbsp; 2019 – 2023</div>
+            <div class="edu-note">
+              Final-year project: <strong>IDS (Intrusion Detection System)</strong> — monitored network traffic,
+              detected ARP spoofing, flooding, TCP/TFTP anomalies using ML-enhanced algorithms.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="alt-bg">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// experience</p>
+      <h2 class="section-title">Career <span>Timeline</span></h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-company">Cybersecurity Industry</div>
+        <div class="tl-role">Cybersecurity Specialist – Purple Team</div>
+        <div class="tl-date">Dec 2024 – Present &nbsp;·&nbsp; Full-time</div>
+        <div class="tl-desc">
+          Bridging red and blue team operations as a Purple Team specialist.
+          Conducting adversary simulations, validating defensive controls, and strengthening
+          detection coverage across the organization.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">Red Team</span><span class="tl-tag">Blue Team</span>
+          <span class="tl-tag">MITRE ATT&CK</span><span class="tl-tag">SIEM / ELK</span>
+          <span class="tl-tag">Threat Intel</span>
+        </div>
+      </div>
+
+      <div class="tl-item purple-dot reveal">
+        <div class="tl-company">AMC</div>
+        <div class="tl-role">Penetration Tester</div>
+        <div class="tl-date">May 2024 – Jan 2025 &nbsp;·&nbsp; 9 months</div>
+        <div class="tl-desc">
+          Conducted internal and external penetration tests. Developed custom security tooling
+          in Python and C++ to automate vulnerability discovery.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">Python</span><span class="tl-tag">C++</span>
+          <span class="tl-tag">Web App Pentesting</span><span class="tl-tag">Network Pentesting</span>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-company">AMC</div>
+        <div class="tl-role">SOC Engineer</div>
+        <div class="tl-date">Nov 2023 – Apr 2024 &nbsp;·&nbsp; 6 months &nbsp;·&nbsp; Full-time</div>
+        <div class="tl-desc">
+          Monitored security events, triaged alerts, and performed incident response.
+          Worked with SIEM tools and developed detection playbooks.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">SOC</span><span class="tl-tag">Incident Response</span>
+          <span class="tl-tag">SIEM</span><span class="tl-tag">Alert Triage</span>
+        </div>
+      </div>
+
+      <div class="tl-item purple-dot reveal">
+        <div class="tl-company">Freelancing</div>
+        <div class="tl-role">Research Assistant</div>
+        <div class="tl-date">Mar 2024 – Jan 2025 &nbsp;·&nbsp; 11 months &nbsp;·&nbsp; Part-time</div>
+        <div class="tl-desc">Technical research and report writing. Authored security documentation in LaTeX.</div>
+        <div class="tl-tags"><span class="tl-tag">Report Writing</span><span class="tl-tag">LaTeX</span></div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-company">North Technical University</div>
+        <div class="tl-role">Project Advisor / Consultant / Research Assistant</div>
+        <div class="tl-date">2021 – Dec 2023 &nbsp;·&nbsp; 3 years &nbsp;·&nbsp; Mosul, Hybrid</div>
+        <div class="tl-desc">
+          Advised Bachelor's, Master's, and PhD students on network security and cybersecurity projects.
+          All supervised projects achieved <strong>Excellent</strong> grades.
+          Built 100+ projects incorporating Arduino, Raspberry Pi, and custom PCB designs.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">Network Security</span><span class="tl-tag">Arduino</span>
+          <span class="tl-tag">Raspberry Pi</span><span class="tl-tag">OOP</span><span class="tl-tag">Research</span>
+        </div>
+      </div>
+
+      <div class="tl-item purple-dot reveal">
+        <div class="tl-company">AMC</div>
+        <div class="tl-role">IT Specialist → Senior Data Entry Clerk</div>
+        <div class="tl-date">Mar 2021 – Oct 2023 &nbsp;·&nbsp; Baghdad, Hybrid</div>
+        <div class="tl-desc">
+          <ul>
+            <li>Input 5,000+ records daily into CRM/ERP with 99% accuracy.</li>
+            <li>Created standardized templates improving team productivity by 20%.</li>
+            <li>Reduced data errors by 10%; mentored 4 new clerks.</li>
+            <li>Promoted to Senior Clerk for exceeding quality and efficiency goals.</li>
+          </ul>
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">IT Support</span><span class="tl-tag">Microsoft Office</span>
+          <span class="tl-tag">Problem Solving</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// skills</p>
+      <h2 class="section-title">Technical <span>Arsenal</span></h2>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-hd">
+          <div class="sk-icon red">&#x1f3af;</div>
+          <div class="skill-cat-name">Offensive Security</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Penetration Testing</span>
+          <span class="skill-tag">Web App Exploitation</span>
+          <span class="skill-tag">Wireless Attacks</span>
+          <span class="skill-tag">Active Directory Attacks</span>
+          <span class="skill-tag">Red Team Ops</span>
+          <span class="skill-tag">Bug Bounty</span>
+          <span class="skill-tag">LFI / SSRF / Open Redirect</span>
+          <span class="skill-tag">Payload Delivery</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-hd">
+          <div class="sk-icon blue">&#x1f6e1;&#xfe0f;</div>
+          <div class="skill-cat-name">Defensive Security</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Threat Hunting (OSTH)</span>
+          <span class="skill-tag">Incident Response (OSIR)</span>
+          <span class="skill-tag">Defense Analysis (OSDA)</span>
+          <span class="skill-tag">ELK Stack / SIEM</span>
+          <span class="skill-tag">SOC Operations</span>
+          <span class="skill-tag">Malware Analysis</span>
+          <span class="skill-tag">MITRE ATT&CK</span>
+          <span class="skill-tag">NIST / GDPR / PCI-DSS</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-hd">
+          <div class="sk-icon orange">&#x2601;&#xfe0f;</div>
+          <div class="skill-cat-name">Cloud &amp; DevSecOps</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS / Azure / GCP</span>
+          <span class="skill-tag">IAM Exploitation</span>
+          <span class="skill-tag">CI/CD Pipeline Attacks</span>
+          <span class="skill-tag">Docker / K8s Escape</span>
+          <span class="skill-tag">IaC Misconfig</span>
+          <span class="skill-tag">Secrets Hunting</span>
+          <span class="skill-tag">OPSEC Redirectors</span>
+          <span class="skill-tag">CloudTrail Audit</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-hd">
+          <div class="sk-icon green">&#x1f4bb;</div>
+          <div class="skill-cat-name">Programming &amp; Scripting</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C / C++</span>
+          <span class="skill-tag">C# / .NET</span>
+          <span class="skill-tag">PowerShell</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">LaTeX</span>
+          <span class="skill-tag">Arduino</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-hd">
+          <div class="sk-icon teal">&#x1f310;</div>
+          <div class="skill-cat-name">Networking</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">CCNA / CCNP</span>
+          <span class="skill-tag">MikroTik (MTCNA)</span>
+          <span class="skill-tag">Packet Analysis</span>
+          <span class="skill-tag">DNS / ARP / TCP/IP</span>
+          <span class="skill-tag">Wireless Security</span>
+          <span class="skill-tag">Multicloud Networking</span>
+          <span class="skill-tag">Firewall Development</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-hd">
+          <div class="sk-icon purple">&#x1f4dd;</div>
+          <div class="skill-cat-name">Compliance &amp; Governance</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">ISO/IEC 27001 Lead Auditor</span>
+          <span class="skill-tag">ISO/IEC 27701 Lead Auditor</span>
+          <span class="skill-tag">NIST Framework</span>
+          <span class="skill-tag">GDPR</span>
+          <span class="skill-tag">PCI-DSS</span>
+          <span class="skill-tag">Report Writing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="alt-bg">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// projects</p>
+      <h2 class="section-title">Selected <span>Work</span></h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="proj-card feat reveal">
+        <div class="proj-top">
+          <span class="proj-name">SecureIntake-Defensive-GUI</span>
+          <span class="proj-badge badge-feat">Featured</span>
+        </div>
+        <p class="proj-desc">
+          Cross-platform C# + Avalonia tool for safe file triage before opening or forwarding.
+          Enforces allow-lists, PDF/OOXML structural checks, AV scanning (ClamAV / Defender),
+          AES-GCM encryption, and JSON logging with MITRE ATT&CK tags.
+          Built for SOC intake desks and incident-response jump boxes.
+        </p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot cs"></span> C# / .NET</div>
+          <a class="proj-link" href="https://github.com/Hackmain/SecureIntake-Defensive-GUI" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+
+      <div class="proj-card feat reveal">
+        <div class="proj-top">
+          <span class="proj-name">IDS — Intrusion Detection System</span>
+          <span class="proj-badge badge-feat">Graduation Project</span>
+        </div>
+        <p class="proj-desc">
+          Final-year project at University of Mosul. Detects ARP spoofing, flooding attacks,
+          TCP and TFTP anomalies. Monitors all flags and state changes across IPv4, ICMP, ARP,
+          UDP, TCP, and TFTP using ML-enhanced algorithms.
+        </p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python / Linux</div>
+          <span class="proj-link disabled">Academic Project</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">Open-RedirIN</span>
+        </div>
+        <p class="proj-desc">Open-source detection tool for open redirect vulnerabilities in web applications. Starred by the community.</p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
+          <a class="proj-link" href="https://github.com/Hackmain/Open-RedirIN" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">lfi-hammer</span>
+        </div>
+        <p class="proj-desc">Automated Local File Inclusion vulnerability scanner. Fast, accurate, and configurable for real-world web targets.</p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
+          <a class="proj-link" href="https://github.com/Hackmain/lfi-hammer" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">Wadvancescanner</span>
+        </div>
+        <p class="proj-desc">Advanced web application scanner — discovers open ports, enumerates vulnerabilities, and surfaces detailed information from any web target.</p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
+          <a class="proj-link" href="https://github.com/Hackmain/Wadvancescanner" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">endpoint-firewall</span>
+        </div>
+        <p class="proj-desc">Endpoint firewall protecting against DDoS, DNS spoofing, and ARP spoofing. Comprehensive network-layer defence.</p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
+          <a class="proj-link" href="https://github.com/Hackmain/endpoint-firewall" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">simplefirewall</span>
+        </div>
+        <p class="proj-desc">Low-level firewall implementation in C++. Packet filtering and rule-based traffic control at the network layer.</p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot cpp"></span> C++</div>
+          <a class="proj-link" href="https://github.com/Hackmain/simplefirewall" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">LocalNetwork-Scanner + MPortScanner</span>
+        </div>
+        <p class="proj-desc">Local network device discovery and multi-threaded port scanner inspired by nmap. Maps IPs, MACs, and running services.</p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
+          <a class="proj-link" href="https://github.com/Hackmain" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+
+      <div class="proj-card feat reveal">
+        <div class="proj-top">
+          <span class="proj-name">IFire</span>
+          <span class="proj-badge badge-priv">Private</span>
+        </div>
+        <p class="proj-desc">
+          AI-Enhanced IDS/IPS Firewall written in C with a Python anomaly-detection engine (Isolation Forest).
+          Captures live traffic via <code style="background:var(--surface2);padding:0 4px;border-radius:3px;font-size:0.8em">libpcap</code>,
+          detects ARP spoofing, SYN floods, port scans, ping floods, and TFTP anomalies in real time.
+          IPS mode auto-blocks attackers via <code style="background:var(--surface2);padding:0 4px;border-radius:3px;font-size:0.8em">iptables</code>.
+          Emits structured JSON logs. Covers Ethernet, ARP, IPv4, ICMP, TCP, UDP, TFTP.
+        </p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot cpp" style="background:#555555"></span> C + Python AI</div>
+          <span class="proj-link disabled">Private Repo</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">Advanced-Firewall</span>
+          <span class="proj-badge badge-priv">Private</span>
+        </div>
+        <p class="proj-desc">
+          Advanced Python firewall using Scapy for real-time packet sniffing and inspection.
+          Detects and blocks DDoS, DoS, ARP spoofing, DNS spoofing, and IP spoofing.
+          Supports dynamic rule management — add or block IPs, ports, and domains on the fly.
+        </p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python / Scapy</div>
+          <span class="proj-link disabled">Private Repo</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">hunt</span>
+          <span class="proj-badge badge-priv">Private</span>
+        </div>
+        <p class="proj-desc">
+          Private recon and OSINT hunting tool written in Python.
+          Automates target intelligence gathering for offensive security engagements.
+        </p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
+          <span class="proj-link disabled">Private Repo</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">NetSpeed</span>
+          <span class="proj-badge badge-priv">Private</span>
+        </div>
+        <p class="proj-desc">
+          Network speed calculator measuring real-time download and upload throughput.
+          Educational tool demonstrating network I/O measurement with Python libraries.
+        </p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
+          <span class="proj-link disabled">Private Repo</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">RSA + Caesar Encryption</span>
+        </div>
+        <p class="proj-desc">RSA asymmetric encryption and Caesar cipher implementations from scratch, covering key generation, padding, and decryption.</p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
+          <a class="proj-link" href="https://github.com/Hackmain" target="_blank" rel="noopener">GitHub &#8599;</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <span class="proj-name">100+ Academic Security Projects</span>
+          <span class="proj-badge badge-acad">Academic</span>
+        </div>
+        <p class="proj-desc">
+          Designed and supervised 100+ Bachelor's, Master's, and PhD projects in Network Security
+          and Cybersecurity at North Technical University and University of Mosul.
+          Topics include IDS/IPS, secure comms, hardware security (Arduino, RPi), and custom PCB design.
+          All projects achieved <strong>Excellent</strong> grades.
+        </p>
+        <div class="proj-footer">
+          <div class="proj-lang"><span class="lang-dot multi"></span> Multi-language</div>
+          <span class="proj-link disabled">University Projects</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTF -->
+<section id="ctf">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// competition</p>
+      <h2 class="section-title">CTF <span class="purple">Achievements</span></h2>
+    </div>
+    <div class="ctf-grid">
+
+      <div class="ctf-card gold reveal">
+        <div class="ctf-rank gold-rank">#19</div>
+        <div class="ctf-name">HTB Cyber Apocalypse CTF 2025</div>
+        <div class="ctf-detail">19th globally &middot; <strong style="color:gold">1st in Iraq</strong> &middot; 18,000+ players, 8,000+ teams</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">#51</div>
+        <div class="ctf-name">RITSEC CTF</div>
+        <div class="ctf-detail">51st / 663 &middot; Solo squad &middot; Global</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">#52</div>
+        <div class="ctf-name">Global Cyber Skills Benchmark CTF 2025</div>
+        <div class="ctf-detail">52nd / 796 teams &middot; 77/103 challenges &middot; 36,675 pts (HTB)</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">#55</div>
+        <div class="ctf-name">EC-Council Hackerverse CTF</div>
+        <div class="ctf-detail">55th / 3,175 &middot; August 2025 &middot; Global</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">Top 61</div>
+        <div class="ctf-name">DownUnderCTF 6</div>
+        <div class="ctf-detail">Top 61 / 1,668 teams &middot; Rev Eng, Web, AI, OSINT, Crypto</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">#66</div>
+        <div class="ctf-name">MetaCTF Flash CTF — April 2025</div>
+        <div class="ctf-detail">66th / 1,172 &middot; 2-hour challenge</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">#100</div>
+        <div class="ctf-name">MetaCTF Flash CTF — May 2025</div>
+        <div class="ctf-detail">100th / 1,000 &middot; 2-hour challenge</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">22/28</div>
+        <div class="ctf-name">BDSec CTF 2025</div>
+        <div class="ctf-detail">Score 67 &middot; 22 flags solved &middot; 1,000+ global specialists</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">#219</div>
+        <div class="ctf-name">DawgCTF 2025</div>
+        <div class="ctf-detail">219th / 1,238 teams &middot; Solo squad (UMBC CyberDawgs)</div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">Top</div>
+        <div class="ctf-name">VishwaCTF'26</div>
+        <div class="ctf-detail">Top rank &middot; CyberCell VIT + Bugcrowd &middot; 48-hour competition</div>
+      </div>
+
+      <div class="ctf-card gold reveal" style="grid-column: span 2;">
+        <div style="display:flex; align-items:flex-start; gap:1.5rem; flex-wrap:wrap;">
+          <div>
+            <div class="ctf-rank gold-rank" style="font-size:2.5rem;">500+</div>
+            <div class="ctf-name" style="font-size:1rem;">Vulnerabilities Reported</div>
+            <div class="ctf-detail" style="margin-top:0.4rem;">HackerOne &middot; Other Global Platforms &middot; Local &amp; Regional Companies (Iraq)</div>
+          </div>
+          <div style="flex:1; min-width:220px; display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; margin-top:0.3rem;">
+            <div style="background:rgba(255,215,0,0.07); border:1px solid rgba(255,215,0,0.2); border-radius:8px; padding:0.7rem 1rem;">
+              <div style="font-size:1.2rem; font-weight:900; color:gold; font-family:monospace;">Critical</div>
+              <div style="font-size:0.75rem; color:var(--muted);">Severity Reports</div>
+            </div>
+            <div style="background:rgba(255,107,53,0.08); border:1px solid rgba(255,107,53,0.2); border-radius:8px; padding:0.7rem 1rem;">
+              <div style="font-size:1.2rem; font-weight:900; color:var(--orange); font-family:monospace;">High / Med</div>
+              <div style="font-size:0.75rem; color:var(--muted);">Severity Reports</div>
+            </div>
+            <div style="background:rgba(0,212,255,0.07); border:1px solid rgba(0,212,255,0.2); border-radius:8px; padding:0.7rem 1rem;">
+              <div style="font-size:1.2rem; font-weight:900; color:var(--accent); font-family:monospace;">HackerOne</div>
+              <div style="font-size:0.75rem; color:var(--muted);">+ other platforms</div>
+            </div>
+            <div style="background:rgba(0,255,136,0.06); border:1px solid rgba(0,255,136,0.15); border-radius:8px; padding:0.7rem 1rem;">
+              <div style="font-size:1.2rem; font-weight:900; color:var(--green); font-family:monospace;">Local / MENA</div>
+              <div style="font-size:0.75rem; color:var(--muted);">Regional companies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ctf-card reveal">
+        <div class="ctf-rank">&#x1f31f;</div>
+        <div class="ctf-name">Midnight Sun CTF 2025</div>
+        <div class="ctf-detail">Competed &middot; Intense technical challenges</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="alt-bg">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// credentials</p>
+      <h2 class="section-title">43 <span>Certifications</span></h2>
+    </div>
+
+    <div class="cert-groups">
+
+      <!-- OffSec -->
+      <div class="reveal">
+        <div class="cert-group-label"><h3>OffSec — All 8 Certs</h3></div>
+        <div class="certs-grid">
+          <a class="cert-card" href="https://credentials.offsec.com/05fe892d-8d01-457e-93f3-28610c0a04a1" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f310;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Web Expert (OSWE)</div>
+              <div class="cert-issuer">OffSec &middot; June 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/57b9a9d4-2586-4cfd-ba76-19d98c2cb2d0" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f4f6;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Wireless Professional (OSWP)</div>
+              <div class="cert-issuer">OffSec &middot; June 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/12218cd8-b0a7-4967-9cd4-4f30f2412ad6" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f3af;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Certified Professional+ (OSCP+)</div>
+              <div class="cert-issuer">OffSec &middot; June 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/9e995753-63e3-4087-8f83-994f4142ca52" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f512;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Certified Professional (OSCP)</div>
+              <div class="cert-issuer">OffSec &middot; June 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/27391626-e025-40a6-a123-b800b6692abb" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f50d;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Web Assessor (OSWA)</div>
+              <div class="cert-issuer">OffSec &middot; February 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/29e3579c-74dd-4c33-a4dd-704e975ac9e4" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f6e1;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Defense Analyst (OSDA)</div>
+              <div class="cert-issuer">OffSec &middot; March 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/eeaff8c0-26cc-47b4-876f-a42253e40ba9" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f6a8;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Incident Responder (OSIR)</div>
+              <div class="cert-issuer">OffSec &middot; November 2025</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/105f1dbc-b460-4e90-9338-501773ef1b02" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f50e;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Threat Hunter (OSTH)</div>
+              <div class="cert-issuer">OffSec &middot; October 2025</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- CyberWarfare Labs -->
+      <div class="reveal">
+        <div class="cert-group-label"><h3>CyberWarfare Labs</h3></div>
+        <div class="certs-grid">
+          <a class="cert-card" href="https://www.credential.net/c8a4ef5b-b34a-4c23-b297-de240adbf469" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(124,58,237,0.1)">&#x1f4e6;</div>
+            <div class="cert-info">
+              <div class="cert-name">DevOps Red Team Analyst (DO-RTA)</div>
+              <div class="cert-issuer">CyberWarfare Labs &middot; March 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(124,58,237,0.1)">&#x2601;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">Multi-Cloud Red Team Analyst (MCRTA)</div>
+              <div class="cert-issuer">CyberWarfare Labs</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(124,58,237,0.1)">&#x1f6e1;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">Multi-Cloud Blue Team Analyst (MCBTA)</div>
+              <div class="cert-issuer">CyberWarfare Labs &middot; March 2025</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(124,58,237,0.1)">&#x1f3af;</div>
+            <div class="cert-info">
+              <div class="cert-name">Certified Red Team Analyst (CRTA)</div>
+              <div class="cert-issuer">CyberWarfare Labs</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(124,58,237,0.1)">&#x1f5a5;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">Certified Red Team Infra Dev (CRT-ID)</div>
+              <div class="cert-issuer">CyberWarfare Labs &middot; February 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(124,58,237,0.1)">&#x1f4cb;</div>
+            <div class="cert-info">
+              <div class="cert-name">Certified Red Team Operations Mgmt (CRTOM)</div>
+              <div class="cert-issuer">CyberWarfare Labs</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Compliance & ISO -->
+      <div class="reveal">
+        <div class="cert-group-label"><h3>Compliance &amp; ISO</h3></div>
+        <div class="certs-grid">
+          <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,150,255,0.1)">&#x1f4cb;</div>
+            <div class="cert-info">
+              <div class="cert-name">ISO/IEC 27701:2025 Lead Auditor</div>
+              <div class="cert-issuer">Mastermind Assurance &middot; June 2026</div>
+              <div class="cert-status">Credly Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,150,255,0.1)">&#x1f4cb;</div>
+            <div class="cert-info">
+              <div class="cert-name">ISO/IEC 27001:2022 Lead Auditor</div>
+              <div class="cert-issuer">Mastermind Assurance &middot; August 2025</div>
+              <div class="cert-status">Credly Verified</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Networking -->
+      <div class="reveal">
+        <div class="cert-group-label"><h3>Networking &amp; Infrastructure</h3></div>
+        <div class="certs-grid">
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(0,212,255,0.1)">&#x1f5a7;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">CCNA + CCNP</div>
+              <div class="cert-issuer">Cisco Certified</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+          <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,212,255,0.1)">&#x1f310;</div>
+            <div class="cert-info">
+              <div class="cert-name">Ethical Hacker</div>
+              <div class="cert-issuer">Cisco Networking Academy &middot; October 2024</div>
+              <div class="cert-status">Credly Verified</div>
+            </div>
+          </a>
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(0,212,255,0.1)">&#x1f4e1;</div>
+            <div class="cert-info">
+              <div class="cert-name">MTCNA — MikroTik Certified</div>
+              <div class="cert-issuer">MikroTik</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+          <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,212,255,0.1)">&#x2601;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">Multicloud Network Associate (MCNA)</div>
+              <div class="cert-issuer">Aviatrix &middot; Expires Sep 2028</div>
+              <div class="cert-status">Credly Verified</div>
+            </div>
+          </a>
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(0,212,255,0.1)">&#x1f5a5;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">MCSA + MCSE</div>
+              <div class="cert-issuer">Microsoft Certified</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(255,107,53,0.1)">&#x1f6e1;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">NSE3 — Fortinet Certified Associate (FCA)</div>
+              <div class="cert-issuer">Fortinet &middot; June 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other -->
+      <div class="reveal">
+        <div class="cert-group-label"><h3>eLearnSecurity / INE &amp; Other</h3></div>
+        <div class="certs-grid">
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f6a8;</div>
+            <div class="cert-info">
+              <div class="cert-name">eCIR — Certified Incident Responder</div>
+              <div class="cert-issuer">eLearnSecurity / INE</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f4bb;</div>
+            <div class="cert-info">
+              <div class="cert-name">CSEDP — Certified Security &amp; Data Engineer</div>
+              <div class="cert-issuer">The SecOps Group</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f310;</div>
+            <div class="cert-info">
+              <div class="cert-name">CNSP — Certified Network Security Professional</div>
+              <div class="cert-issuer">The SecOps Group</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f4ca;</div>
+            <div class="cert-info">
+              <div class="cert-name">SOC100 — Security Operations Essentials</div>
+              <div class="cert-issuer">OffSec &middot; 100% Score</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+          <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f5a7;&#xfe0f;</div>
+            <div class="cert-info">
+              <div class="cert-name">Introduction to Packet Tracer</div>
+              <div class="cert-issuer">Cisco Networking Academy &middot; January 2024</div>
+              <div class="cert-status">Credly Verified</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-count-note reveal">
+        Showing selected credentials from 43 total &nbsp;&middot;&nbsp;
+        <a href="https://www.linkedin.com/in/yousef-k-ba0b72293/" target="_blank" rel="noopener">View all 43 on LinkedIn &#8599;</a>
+        &nbsp;&middot;&nbsp;
+        <a href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">OffSec Wallet &#8599;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner reveal">
+      <p class="section-label">// contact</p>
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <p>
+        Open to penetration testing, security consulting, red/blue team roles, and
+        research collaborations — on-site or remote. Reach out on any platform below.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="https://github.com/Hackmain" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/yousef-k-ba0b72293/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="contact-link" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          OffSec Credentials
+        </a>
+        <a class="contact-link" href="https://instagram.com/esefkh740_" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+      </div>
+      <p class="contact-email">esefkh740@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Yousef Khudher &nbsp;·&nbsp; <span>Penetration Tester &amp; Purple Team Specialist</span> &nbsp;·&nbsp; Iraq</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Typing animation
+  const titles = [
+    'Penetration Tester',
+    'Purple Team Specialist',
+    'Threat Hunter & Incident Responder',
+    'Red Team Operator',
+    'Security Tool Developer',
+  ];
+  let ti = 0, ci = 0, del = false;
+  const el = document.querySelector('.typing');
+  function type() {
+    const cur = titles[ti];
+    if (!del) {
+      el.textContent = cur.slice(0, ++ci);
+      if (ci === cur.length) { del = true; setTimeout(type, 2000); return; }
+    } else {
+      el.textContent = cur.slice(0, --ci);
+      if (ci === 0) { del = false; ti = (ti + 1) % titles.length; }
+    }
+    setTimeout(type, del ? 35 : 75);
+  }
+  type();
+</script>
+</body>
+</html>
