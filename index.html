@@ -319,14 +319,19 @@
     .cert-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem;
       display: flex; align-items: flex-start; gap: 0.9rem;
-      transition: border-color 0.2s, transform 0.2s; text-decoration: none; color: inherit;
+      transition: border-color 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1);
+      text-decoration: none; color: inherit;
     }
-    .cert-card:hover { border-color: var(--green); transform: translateY(-2px); }
+    .cert-card:hover {
+      border-color: var(--green); transform: translateY(-4px) scale(1.015);
+      box-shadow: 0 12px 28px rgba(0,255,102,0.1);
+    }
     .cert-logo {
       width: 42px; height: 42px; border-radius: 8px; display: flex; align-items: center;
       justify-content: center; font-size: 1.3rem; flex-shrink: 0; overflow: hidden;
     }
     .cert-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .cert-badge-icon { width: 22px; height: 22px; }
     .cert-info { flex: 1; min-width: 0; }
     .cert-name { font-weight: 700; font-size: 0.88rem; margin-bottom: 0.2rem; }
     .cert-issuer { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.4rem; }
@@ -390,6 +395,10 @@
       <path class="mask-line" d="M50,70 C58,73 68,71 73,64" />
       <path class="mask-line" d="M40,79 Q50,85 60,79" />
       <path class="mask-goatee" d="M41,82 L59,82 L50,102 Z" />
+    </symbol>
+    <symbol id="certBadgeIcon" viewBox="0 0 24 24">
+      <path d="M12 2.5l7.5 3v6c0 5-3.2 8.9-7.5 10-4.3-1.1-7.5-5-7.5-10v-6l7.5-3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+      <path d="M8.7 12.2l2.2 2.2 4.4-4.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
   </defs>
 </svg>
@@ -1089,7 +1098,7 @@
         <div class="cert-group-label"><h3>OffSec — All 12 Certs</h3></div>
         <div class="certs-grid">
           <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f9e0;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1);color:#ff4757"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Certified CyberCore (OSCC-SJD)</div>
               <div class="cert-issuer">OffSec &middot; August 2026</div>
@@ -1097,7 +1106,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f9e0;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1);color:#ff4757"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Certified CyberCore (OSCC-SEC)</div>
               <div class="cert-issuer">OffSec &middot; August 2026</div>
@@ -1137,7 +1146,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/12218cd8-b0a7-4967-9cd4-4f30f2412ad6" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f3af;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1);color:#ff4757"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Certified Professional+ (OSCP+)</div>
               <div class="cert-issuer">OffSec &middot; June 2026</div>
@@ -1153,7 +1162,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/27391626-e025-40a6-a123-b800b6692abb" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f50d;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1);color:#ff4757"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Web Assessor (OSWA)</div>
               <div class="cert-issuer">OffSec &middot; February 2026</div>
@@ -1161,7 +1170,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/29e3579c-74dd-4c33-a4dd-704e975ac9e4" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f6e1;&#xfe0f;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1);color:#ff4757"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Defense Analyst (OSDA)</div>
               <div class="cert-issuer">OffSec &middot; March 2026</div>
@@ -1169,7 +1178,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/eeaff8c0-26cc-47b4-876f-a42253e40ba9" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f6a8;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1);color:#ff4757"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Incident Responder (OSIR)</div>
               <div class="cert-issuer">OffSec &middot; November 2025</div>
@@ -1177,7 +1186,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/105f1dbc-b460-4e90-9338-501773ef1b02" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f50e;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1);color:#ff4757"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Threat Hunter (OSTH)</div>
               <div class="cert-issuer">OffSec &middot; October 2025</div>
@@ -1192,7 +1201,7 @@
         <div class="cert-group-label"><h3>CyberWarfare Labs</h3></div>
         <div class="certs-grid">
           <a class="cert-card" href="https://www.credential.net/c8a4ef5b-b34a-4c23-b297-de240adbf469" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(13,157,79,0.1)">&#x1f4e6;</div>
+            <div class="cert-logo" style="background:rgba(13,157,79,0.1);color:#0d9d4f"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">DevOps Red Team Analyst (DO-RTA)</div>
               <div class="cert-issuer">CyberWarfare Labs &middot; March 2026</div>
@@ -1200,7 +1209,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(13,157,79,0.1)">&#x2601;&#xfe0f;</div>
+            <div class="cert-logo" style="background:rgba(13,157,79,0.1);color:#0d9d4f"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">Multi-Cloud Red Team Analyst (MCRTA)</div>
               <div class="cert-issuer">CyberWarfare Labs</div>
@@ -1208,7 +1217,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(13,157,79,0.1)">&#x1f6e1;&#xfe0f;</div>
+            <div class="cert-logo" style="background:rgba(13,157,79,0.1);color:#0d9d4f"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">Multi-Cloud Blue Team Analyst (MCBTA)</div>
               <div class="cert-issuer">CyberWarfare Labs &middot; March 2025</div>
@@ -1216,7 +1225,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(13,157,79,0.1)">&#x1f3af;</div>
+            <div class="cert-logo" style="background:rgba(13,157,79,0.1);color:#0d9d4f"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">Certified Red Team Analyst (CRTA)</div>
               <div class="cert-issuer">CyberWarfare Labs</div>
@@ -1224,7 +1233,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(13,157,79,0.1)">&#x1f5a5;&#xfe0f;</div>
+            <div class="cert-logo" style="background:rgba(13,157,79,0.1);color:#0d9d4f"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">Certified Red Team Infra Dev (CRT-ID)</div>
               <div class="cert-issuer">CyberWarfare Labs &middot; February 2026</div>
@@ -1232,7 +1241,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(13,157,79,0.1)">&#x1f4cb;</div>
+            <div class="cert-logo" style="background:rgba(13,157,79,0.1);color:#0d9d4f"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">Certified Red Team Operations Mgmt (CRTOM)</div>
               <div class="cert-issuer">CyberWarfare Labs</div>
@@ -1294,7 +1303,7 @@
             </div>
           </a>
           <div class="cert-card" style="cursor:default">
-            <div class="cert-logo" style="background:rgba(0,255,102,0.1)">&#x1f4e1;</div>
+            <div class="cert-logo" style="background:rgba(0,255,102,0.1)"><img src="assets/certs/mtcna.png" alt="MTCNA badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">MTCNA — MikroTik Certified</div>
               <div class="cert-issuer">MikroTik</div>
@@ -1341,7 +1350,7 @@
         <div class="cert-group-label"><h3>eLearnSecurity / INE &amp; Other</h3></div>
         <div class="certs-grid">
           <div class="cert-card" style="cursor:default">
-            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f6a8;</div>
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08);color:#00ff88"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">eCIR — Certified Incident Responder</div>
               <div class="cert-issuer">eLearnSecurity / INE</div>
@@ -1365,7 +1374,7 @@
             </div>
           </div>
           <div class="cert-card" style="cursor:default">
-            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f4ca;</div>
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08);color:#00ff88"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
             <div class="cert-info">
               <div class="cert-name">SOC100 — Security Operations Essentials</div>
               <div class="cert-issuer">OffSec &middot; 100% Score</div>
@@ -1373,7 +1382,7 @@
             </div>
           </div>
           <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f5a7;&#xfe0f;</div>
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08)"><img src="assets/certs/packet-tracer.png" alt="Introduction to Packet Tracer badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">Introduction to Packet Tracer</div>
               <div class="cert-issuer">Cisco Networking Academy &middot; January 2024</div>
