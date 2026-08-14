@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yousef Khudher | Purple Team Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #030805;
@@ -26,9 +29,23 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
       line-height: 1.6;
       overflow-x: hidden;
+    }
+
+    a:focus-visible, button:focus-visible, .cert-card:focus-visible, .btn:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .hero-matrix { display: none; }
     }
 
     /* ─── NAV ─── */
@@ -40,7 +57,7 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Courier New', monospace; font-size: 1.1rem; color: var(--accent); font-weight: 800; letter-spacing: 3px; }
+    .nav-logo { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: var(--accent); font-weight: 800; letter-spacing: 3px; }
     .nav-mask { width: 20px; height: 24px; flex-shrink: 0; }
 
     /* ─── HACKER MASK ─── */
@@ -99,11 +116,11 @@
     .term-dot.yellow { background: #ffbd2e; }
     .term-dot.green { background: #27c93f; }
     .term-title {
-      margin-left: 0.6rem; font-family: 'Courier New', monospace; font-size: 0.72rem;
+      margin-left: 0.6rem; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
       color: var(--muted); letter-spacing: 0.5px;
     }
     .term-body {
-      font-family: 'Courier New', monospace; font-size: 0.8rem; line-height: 1.7;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7;
       padding: 1rem 1.2rem; height: 230px; overflow: hidden; text-align: left; color: var(--green);
     }
     .term-line { white-space: pre-wrap; word-break: break-all; }
@@ -128,7 +145,7 @@
 
     .hero h1 { font-size: clamp(2.8rem, 6vw, 4.8rem); font-weight: 900; line-height: 1.05; margin-bottom: 0.6rem; }
     .hero h1 .accent { color: var(--accent); }
-    .hero-sub { font-family: 'Courier New', monospace; font-size: clamp(0.95rem, 2.2vw, 1.2rem); color: var(--green); margin-bottom: 1.2rem; letter-spacing: 1px; min-height: 1.8rem; }
+    .hero-sub { font-family: 'JetBrains Mono', monospace; font-size: clamp(0.95rem, 2.2vw, 1.2rem); color: var(--green); margin-bottom: 1.2rem; letter-spacing: 1px; min-height: 1.8rem; }
     .typing::after { content: '|'; animation: blink 1s step-end infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
@@ -137,7 +154,7 @@
       line-height: 1.7;
     }
     .hero-certs-strip {
-      font-family: 'Courier New', monospace; font-size: 0.75rem; color: rgba(0,255,102,0.6);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: rgba(0,255,102,0.6);
       letter-spacing: 1px; margin-bottom: 2rem;
     }
     .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -157,7 +174,7 @@
     section { padding: 5.5rem 2rem; }
     .alt-bg { background: var(--bg2); }
     .container { max-width: 1150px; margin: 0 auto; }
-    .section-label { font-family: 'Courier New', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem; }
     .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 3rem; }
     .section-title span { color: var(--accent); }
     .section-title .purple { color: #4ade80; }
@@ -176,7 +193,7 @@
       padding: 1.5rem; text-align: center; transition: border-color 0.2s, transform 0.2s;
     }
     .stat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .stat-number { font-size: 2.2rem; font-weight: 900; font-family: 'Courier New', monospace; color: var(--accent); }
+    .stat-number { font-size: 2.2rem; font-weight: 900; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
     .stat-number.purple { color: #4ade80; }
     .stat-number.green { color: var(--green); }
     .stat-number.orange { color: var(--orange); }
@@ -216,14 +233,14 @@
     .tl-item.purple-dot::before { background: var(--accent2); box-shadow: 0 0 10px rgba(13,157,79,0.5); }
     .tl-company { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.2rem; }
     .tl-role { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 0.15rem; }
-    .tl-date { font-size: 0.8rem; color: var(--accent); font-family: 'Courier New', monospace; margin-bottom: 0.6rem; }
+    .tl-date { font-size: 0.8rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; margin-bottom: 0.6rem; }
     .tl-desc { color: var(--muted); font-size: 0.9rem; }
     .tl-desc ul { padding-left: 1.2rem; margin-top: 0.4rem; }
     .tl-desc li { margin-bottom: 0.3rem; }
     .tl-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
     .tl-tag {
       background: var(--surface2); border: 1px solid var(--border); border-radius: 4px;
-      padding: 0.15rem 0.6rem; font-size: 0.75rem; color: var(--muted); font-family: 'Courier New', monospace;
+      padding: 0.15rem 0.6rem; font-size: 0.75rem; color: var(--muted); font-family: 'JetBrains Mono', monospace;
     }
 
     /* ─── SKILLS ─── */
@@ -245,7 +262,7 @@
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .skill-tag {
       background: var(--surface2); border: 1px solid var(--border); border-radius: 4px;
-      padding: 0.2rem 0.65rem; font-size: 0.78rem; color: var(--muted); font-family: 'Courier New', monospace;
+      padding: 0.2rem 0.65rem; font-size: 0.78rem; color: var(--muted); font-family: 'JetBrains Mono', monospace;
     }
 
     /* ─── PROJECTS ─── */
@@ -258,7 +275,7 @@
     .proj-card.feat { border-color: rgba(13,157,79,0.4); }
     .proj-card.feat:hover { border-color: #4ade80; }
     .proj-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.7rem; }
-    .proj-name { font-weight: 700; font-size: 0.95rem; font-family: 'Courier New', monospace; color: var(--text); }
+    .proj-name { font-weight: 700; font-size: 0.95rem; font-family: 'JetBrains Mono', monospace; color: var(--text); }
     .proj-badge { font-size: 0.68rem; padding: 0.15rem 0.6rem; border-radius: 999px; white-space: nowrap; }
     .badge-feat { background: rgba(13,157,79,0.15); border: 1px solid rgba(13,157,79,0.4); color: #4ade80; }
     .badge-priv { background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); color: var(--orange); }
@@ -286,7 +303,7 @@
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(90deg, gold, transparent);
     }
-    .ctf-rank { font-family: 'Courier New', monospace; font-size: 1.8rem; font-weight: 900; color: var(--orange); margin-bottom: 0.2rem; line-height: 1; }
+    .ctf-rank { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 900; color: var(--orange); margin-bottom: 0.2rem; line-height: 1; }
     .ctf-rank.gold-rank { color: gold; }
     .ctf-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
     .ctf-detail { font-size: 0.8rem; color: var(--muted); }
@@ -307,8 +324,9 @@
     .cert-card:hover { border-color: var(--green); transform: translateY(-2px); }
     .cert-logo {
       width: 42px; height: 42px; border-radius: 8px; display: flex; align-items: center;
-      justify-content: center; font-size: 1.3rem; flex-shrink: 0;
+      justify-content: center; font-size: 1.3rem; flex-shrink: 0; overflow: hidden;
     }
+    .cert-logo img { width: 100%; height: 100%; object-fit: contain; }
     .cert-info { flex: 1; min-width: 0; }
     .cert-name { font-weight: 700; font-size: 0.88rem; margin-bottom: 0.2rem; }
     .cert-issuer { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.4rem; }
@@ -328,7 +346,7 @@
     .edu-icon { font-size: 2.5rem; flex-shrink: 0; }
     .edu-degree { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; }
     .edu-school { color: var(--accent); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; }
-    .edu-date { font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.6rem; }
+    .edu-date { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.6rem; }
     .edu-note { font-size: 0.88rem; color: var(--muted); }
 
     /* ─── CONTACT ─── */
@@ -343,12 +361,12 @@
     }
     .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
     .contact-link svg { width: 18px; height: 18px; }
-    .contact-email { font-family: 'Courier New', monospace; color: var(--muted); font-size: 0.85rem; }
+    .contact-email { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.85rem; }
 
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid var(--border); padding: 2rem; text-align: center;
-      color: var(--muted); font-size: 0.82rem; font-family: 'Courier New', monospace;
+      color: var(--muted); font-size: 0.82rem; font-family: 'JetBrains Mono', monospace;
     }
     footer span { color: var(--accent); }
 
@@ -412,14 +430,14 @@
     <p class="hero-sub"><span class="typing"></span></p>
 
     <p class="hero-headline">
-      Penetration Tester &amp; Blue Team Specialist with <strong style="color:var(--text)">45 industry certifications</strong>,
-      including all 10 OffSec certs. Ranked <strong style="color:gold">19th globally &amp; 1st in Iraq</strong>
+      Penetration Tester &amp; Blue Team Specialist with <strong style="color:var(--text)">47 industry certifications</strong>,
+      including all 12 OffSec certs. Ranked <strong style="color:gold">19th globally &amp; 1st in Iraq</strong>
       at HTB Cyber Apocalypse 2025. Discovered <strong style="color:var(--orange)">500+ vulnerabilities</strong>
       across HackerOne, global bug bounty platforms, and local/regional companies.
     </p>
 
     <p class="hero-certs-strip">
-      OSCP+ &bull; OSEP &bull; OSWE &bull; OSWP &bull; OSWA &bull; OSDA &bull; OSTH &bull; OSIR &bull; KLCP &bull; DO-RTA &bull; CRTA &bull; MCRTA &bull; MCBTA &bull; ISO 27001 &bull; ISO 27701 &bull; CCNA &bull; CCNP
+      OSCC &bull; OSCP+ &bull; OSEP &bull; OSWE &bull; OSWP &bull; OSWA &bull; OSDA &bull; OSTH &bull; OSIR &bull; KLCP &bull; DO-RTA &bull; CRTA &bull; MCRTA &bull; MCBTA &bull; ISO 27001 &bull; ISO 27701 &bull; CCNA &bull; CCNP
     </p>
 
     <div class="hero-cta">
@@ -433,7 +451,7 @@
       </a>
       <a href="#certifications" class="btn btn-ghost">
         <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-        45 Certifications
+        47 Certifications
       </a>
     </div>
 
@@ -454,7 +472,7 @@
 
     <div class="stats-bar reveal">
       <div class="stat-card">
-        <div class="stat-number">45</div>
+        <div class="stat-number">47</div>
         <div class="stat-label">Certifications</div>
       </div>
       <div class="stat-card">
@@ -1061,17 +1079,33 @@
   <div class="container">
     <div class="reveal">
       <p class="section-label">// credentials</p>
-      <h2 class="section-title">45 <span>Certifications</span></h2>
+      <h2 class="section-title">47 <span>Certifications</span></h2>
     </div>
 
     <div class="cert-groups">
 
       <!-- OffSec -->
       <div class="reveal">
-        <div class="cert-group-label"><h3>OffSec — All 10 Certs</h3></div>
+        <div class="cert-group-label"><h3>OffSec — All 12 Certs</h3></div>
         <div class="certs-grid">
+          <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f9e0;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Certified CyberCore (OSCC-SJD)</div>
+              <div class="cert-issuer">OffSec &middot; August 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f9e0;</div>
+            <div class="cert-info">
+              <div class="cert-name">OffSec Certified CyberCore (OSCC-SEC)</div>
+              <div class="cert-issuer">OffSec &middot; August 2026</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
           <a class="cert-card" href="assets/certs/klcp.png" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f409;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)"><img src="assets/certs/klcp.png" alt="KLCP badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">Kali Linux Certified Professional (KLCP)</div>
               <div class="cert-issuer">OffSec &middot; August 2026</div>
@@ -1079,7 +1113,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/79561b79-1a34-415f-a46f-f7009cec3734#acc.tSR7H0xl" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f480;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)"><img src="assets/certs/osep.png" alt="OSEP badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Experienced Penetration Tester (OSEP)</div>
               <div class="cert-issuer">OffSec &middot; June 2026</div>
@@ -1087,7 +1121,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/05fe892d-8d01-457e-93f3-28610c0a04a1" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f310;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)"><img src="assets/certs/oswe.png" alt="OSWE badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Web Expert (OSWE)</div>
               <div class="cert-issuer">OffSec &middot; June 2026</div>
@@ -1095,7 +1129,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/57b9a9d4-2586-4cfd-ba76-19d98c2cb2d0" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f4f6;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)"><img src="assets/certs/oswp.png" alt="OSWP badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Wireless Professional (OSWP)</div>
               <div class="cert-issuer">OffSec &middot; June 2026</div>
@@ -1111,7 +1145,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://credentials.offsec.com/9e995753-63e3-4087-8f83-994f4142ca52" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(255,71,87,0.1)">&#x1f512;</div>
+            <div class="cert-logo" style="background:rgba(255,71,87,0.1)"><img src="assets/certs/oscp.png" alt="OSCP badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">OffSec Certified Professional (OSCP)</div>
               <div class="cert-issuer">OffSec &middot; June 2026</div>
@@ -1213,7 +1247,7 @@
         <div class="cert-group-label"><h3>Compliance &amp; ISO</h3></div>
         <div class="certs-grid">
           <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(0,200,140,0.1)">&#x1f4cb;</div>
+            <div class="cert-logo" style="background:rgba(0,200,140,0.1)"><img src="assets/certs/iso-27701.png" alt="ISO/IEC 27701:2025 Lead Auditor badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">ISO/IEC 27701:2025 Lead Auditor</div>
               <div class="cert-issuer">Mastermind Assurance &middot; June 2026</div>
@@ -1221,7 +1255,7 @@
             </div>
           </a>
           <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(0,200,140,0.1)">&#x1f4cb;</div>
+            <div class="cert-logo" style="background:rgba(0,200,140,0.1)"><img src="assets/certs/iso-27001.png" alt="ISO/IEC 27001:2022 Lead Auditor badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">ISO/IEC 27001:2022 Lead Auditor</div>
               <div class="cert-issuer">Mastermind Assurance &middot; August 2025</div>
@@ -1235,16 +1269,24 @@
       <div class="reveal">
         <div class="cert-group-label"><h3>Networking &amp; Infrastructure</h3></div>
         <div class="certs-grid">
-          <div class="cert-card" style="cursor:default">
-            <div class="cert-logo" style="background:rgba(0,255,102,0.1)">&#x1f5a7;&#xfe0f;</div>
+          <a class="cert-card" href="https://www.credly.com/org/cisco/badge/ccna" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,255,102,0.1)"><img src="assets/certs/ccna.png" alt="CCNA badge" loading="lazy" /></div>
             <div class="cert-info">
-              <div class="cert-name">CCNA + CCNP</div>
+              <div class="cert-name">CCNA — Cisco Certified Network Associate</div>
               <div class="cert-issuer">Cisco Certified</div>
               <div class="cert-status">Verified</div>
             </div>
-          </div>
-          <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(0,255,102,0.1)">&#x1f310;</div>
+          </a>
+          <a class="cert-card" href="https://www.credly.com/org/cisco/badge/ccnp-core-networking" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,255,102,0.1)"><img src="assets/certs/ccnp.png" alt="CCNP badge" loading="lazy" /></div>
+            <div class="cert-info">
+              <div class="cert-name">CCNP — Cisco Certified Network Professional</div>
+              <div class="cert-issuer">Cisco Certified</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </a>
+          <a class="cert-card" href="https://www.credly.com/org/cisco/badge/ethical-hacker" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,255,102,0.1)"><img src="assets/certs/cisco-ethical-hacker.png" alt="Cisco Ethical Hacker badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">Ethical Hacker</div>
               <div class="cert-issuer">Cisco Networking Academy &middot; October 2024</div>
@@ -1259,8 +1301,8 @@
               <div class="cert-status">Verified</div>
             </div>
           </div>
-          <a class="cert-card" href="https://www.credly.com" target="_blank" rel="noopener">
-            <div class="cert-logo" style="background:rgba(0,255,102,0.1)">&#x2601;&#xfe0f;</div>
+          <a class="cert-card" href="https://www.credly.com/org/aviatrix/badge/multicloud-network-associate" target="_blank" rel="noopener">
+            <div class="cert-logo" style="background:rgba(0,255,102,0.1)"><img src="assets/certs/aviatrix-mcna.png" alt="Aviatrix MCNA badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">Multicloud Network Associate (MCNA)</div>
               <div class="cert-issuer">Aviatrix &middot; Expires Sep 2028</div>
@@ -1268,15 +1310,23 @@
             </div>
           </a>
           <div class="cert-card" style="cursor:default">
-            <div class="cert-logo" style="background:rgba(0,255,102,0.1)">&#x1f5a5;&#xfe0f;</div>
+            <div class="cert-logo" style="background:rgba(0,255,102,0.1)"><img src="assets/certs/mcsa.png" alt="MCSA badge" loading="lazy" /></div>
             <div class="cert-info">
-              <div class="cert-name">MCSA + MCSE</div>
+              <div class="cert-name">MCSA — Microsoft Certified Solutions Associate</div>
               <div class="cert-issuer">Microsoft Certified</div>
               <div class="cert-status">Verified</div>
             </div>
           </div>
           <div class="cert-card" style="cursor:default">
-            <div class="cert-logo" style="background:rgba(255,107,53,0.1)">&#x1f6e1;&#xfe0f;</div>
+            <div class="cert-logo" style="background:rgba(0,255,102,0.1)"><img src="assets/certs/mcse.gif" alt="MCSE badge" loading="lazy" /></div>
+            <div class="cert-info">
+              <div class="cert-name">MCSE — Microsoft Certified Solutions Expert</div>
+              <div class="cert-issuer">Microsoft Certified</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(255,107,53,0.1)"><img src="assets/certs/fortinet-nse3.png" alt="Fortinet NSE3 badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">NSE3 — Fortinet Certified Associate (FCA)</div>
               <div class="cert-issuer">Fortinet &middot; June 2026</div>
@@ -1299,15 +1349,15 @@
             </div>
           </div>
           <div class="cert-card" style="cursor:default">
-            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f4bb;</div>
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08)"><img src="assets/certs/csedp.webp" alt="CSEDP badge" loading="lazy" /></div>
             <div class="cert-info">
-              <div class="cert-name">CSEDP — Certified Security &amp; Data Engineer</div>
+              <div class="cert-name">CSEDP — Certified Social Engineering Defense Practitioner</div>
               <div class="cert-issuer">The SecOps Group</div>
               <div class="cert-status">Verified</div>
             </div>
           </div>
           <div class="cert-card" style="cursor:default">
-            <div class="cert-logo" style="background:rgba(0,255,136,0.08)">&#x1f310;</div>
+            <div class="cert-logo" style="background:rgba(0,255,136,0.08)"><img src="assets/certs/cnsp.webp" alt="CNSP badge" loading="lazy" /></div>
             <div class="cert-info">
               <div class="cert-name">CNSP — Certified Network Security Professional</div>
               <div class="cert-issuer">The SecOps Group</div>
@@ -1334,8 +1384,8 @@
       </div>
 
       <div class="cert-count-note reveal">
-        Showing selected credentials from 45 total &nbsp;&middot;&nbsp;
-        <a href="https://www.linkedin.com/in/yousef-k-ba0b72293/" target="_blank" rel="noopener">View all 45 on LinkedIn &#8599;</a>
+        Showing selected credentials from 47 total &nbsp;&middot;&nbsp;
+        <a href="https://www.linkedin.com/in/yousef-k-ba0b72293/" target="_blank" rel="noopener">View all 47 on LinkedIn &#8599;</a>
         &nbsp;&middot;&nbsp;
         <a href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">OffSec Wallet &#8599;</a>
       </div>
@@ -1414,6 +1464,7 @@
 
   // Matrix rain (hero background)
   (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const canvas = document.getElementById('matrixCanvas');
     const ctx = canvas.getContext('2d');
     const hero = document.querySelector('.hero');
@@ -1464,8 +1515,8 @@
       { out: '[*] Meterpreter session 1 opened' },
       { cmd: 'cat /root/proof.txt' },
       { out: 'OSCP{purple_team_ops}' },
-      { cmd: 'echo "$(whoami) --certs 45 --status open_to_work"' },
-      { out: 'yousef-khudher --certs 45 --status open_to_work' },
+      { cmd: 'echo "$(whoami) --certs 47 --status open_to_work"' },
+      { out: 'yousef-khudher --certs 47 --status open_to_work' },
     ];
 
     let i = 0;
