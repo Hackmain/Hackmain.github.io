@@ -6,7 +6,7 @@
   <title>Yousef Khudher | Purple Team Specialist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #0a0a0b;
@@ -189,39 +189,37 @@
     }
     .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn {
-      position: relative; display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.8rem 1.8rem; border-radius: 999px; font-size: 0.9rem; font-weight: 700;
-      text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: all 0.25s ease; letter-spacing: 0.5px;
-      backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 8px 24px rgba(0,0,0,0.35);
+      position: relative; display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.8rem 1.6rem; border-radius: 0; font-family: 'Pixelify Sans', monospace;
+      font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+      text-decoration: none; cursor: pointer; user-select: none;
+      border: 2px solid #05050a; transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease;
     }
-    .roll-text { display: inline-flex; line-height: 1; vertical-align: middle; }
-    .roll-space { display: inline-block; width: 0.3em; flex-shrink: 0; }
-    .roll-char { display: inline-block; overflow: hidden; height: 1em; vertical-align: top; }
-    .roll-char-inner { display: flex; flex-direction: column; line-height: 1; transform: translateY(0); transition: transform 0.45s cubic-bezier(0.65,0,0.35,1); transition-delay: calc(var(--i) * 22ms); }
-    .roll-char-inner span { display: block; height: 1em; }
-    .btn:hover .roll-char-inner { transform: translateY(-1em); }
-    .btn-primary { background: rgba(129,140,248,0.14); border-color: transparent; color: var(--accent); }
-    .btn-primary:hover {
-      background: rgba(129,140,248,0.22); transform: translateY(-2px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 10px 32px rgba(129,140,248,0.25);
+    .btn-primary {
+      background: var(--accent); color: #0b0b14;
+      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.4), inset -2px -2px 0 rgba(0,0,0,0.3), 0 4px 0 #05050a;
     }
-    .btn-purple { background: rgba(167,139,250,0.18); border-color: transparent; color: #a78bfa; }
-    .btn-purple:hover {
-      background: rgba(167,139,250,0.28); transform: translateY(-2px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 10px 32px rgba(167,139,250,0.3);
+    .btn-primary:hover { background: #a5b0ff; transform: translateY(-2px); box-shadow: inset 2px 2px 0 rgba(255,255,255,0.45), inset -2px -2px 0 rgba(0,0,0,0.3), 0 6px 0 #05050a; }
+    .btn-primary:active { transform: translateY(3px); box-shadow: inset -2px -2px 0 rgba(255,255,255,0.25), inset 2px 2px 0 rgba(0,0,0,0.35), 0 1px 0 #05050a; }
+    .btn-purple {
+      background: #a78bfa; color: #0b0b14;
+      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.4), inset -2px -2px 0 rgba(0,0,0,0.3), 0 4px 0 #05050a;
     }
-    .btn-ghost { background: rgba(255,255,255,0.03); border-color: transparent; color: var(--text); }
-    .btn-ghost:hover {
-      color: var(--accent); background: rgba(129,140,248,0.08); transform: translateY(-2px);
+    .btn-purple:hover { background: #c1b0fc; transform: translateY(-2px); box-shadow: inset 2px 2px 0 rgba(255,255,255,0.45), inset -2px -2px 0 rgba(0,0,0,0.3), 0 6px 0 #05050a; }
+    .btn-purple:active { transform: translateY(3px); box-shadow: inset -2px -2px 0 rgba(255,255,255,0.25), inset 2px 2px 0 rgba(0,0,0,0.35), 0 1px 0 #05050a; }
+    .btn-ghost {
+      background: #17171c; color: var(--text); border-color: #05050a;
+      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.08), inset -2px -2px 0 rgba(0,0,0,0.4), 0 4px 0 #05050a;
     }
+    .btn-ghost:hover { color: var(--accent); background: #202028; transform: translateY(-2px); box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.4), 0 6px 0 #05050a; }
+    .btn-ghost:active { transform: translateY(3px); box-shadow: inset -2px -2px 0 rgba(0,0,0,0.3), inset 2px 2px 0 rgba(0,0,0,0.4), 0 1px 0 #05050a; }
 
     /* ─── SECTIONS ─── */
     section { padding: 5.5rem 2rem; }
     .alt-bg { background: rgba(16,16,18,0.82); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
     .container { max-width: 1150px; margin: 0 auto; }
     .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.4rem; }
-    .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 3rem; }
+    .section-title { font-family: 'Pixelify Sans', monospace; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin-bottom: 3rem; text-shadow: 2px 2px 0 rgba(0,0,0,0.5); }
     .section-title span { color: var(--accent); }
     .section-title .purple { color: #a78bfa; }
 
@@ -455,25 +453,38 @@
     .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
     .contact-link {
       position: relative; display: flex; align-items: center; gap: 0.6rem;
-      padding: 0.85rem 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-      border-radius: 10px; text-decoration: none; color: var(--text); font-size: 0.9rem;
-      transition: all 0.25s ease;
-      backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 20px rgba(0,0,0,0.3);
+      padding: 0.85rem 1.5rem; background: #17171c; border: 2px solid #05050a;
+      border-radius: 0; text-decoration: none; color: var(--text);
+      font-family: 'Pixelify Sans', monospace; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease, color 0.15s ease;
+      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.08), inset -2px -2px 0 rgba(0,0,0,0.4), 0 4px 0 #05050a;
     }
     .contact-link:hover {
-      border-color: var(--accent); color: var(--accent); background: rgba(129,140,248,0.08); transform: translateY(-2px);
+      color: var(--accent); background: #202028; transform: translateY(-2px);
+      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.4), 0 6px 0 #05050a;
+    }
+    .contact-link:active {
+      transform: translateY(3px);
+      box-shadow: inset -2px -2px 0 rgba(0,0,0,0.3), inset 2px 2px 0 rgba(0,0,0,0.4), 0 1px 0 #05050a;
     }
     .contact-link svg { width: 18px; height: 18px; }
     .contact-email { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 0.85rem; }
     .copy-email-btn {
       display: inline-flex; align-items: center; gap: 0.55rem;
-      background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px;
-      padding: 0.55rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--muted);
-      cursor: pointer; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      background: #17171c; border: 2px solid #05050a; border-radius: 0;
+      padding: 0.6rem 1.1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--muted);
+      cursor: pointer;
+      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.08), inset -2px -2px 0 rgba(0,0,0,0.4), 0 4px 0 #05050a;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, color 0.2s, background 0.15s;
     }
-    .copy-email-btn:hover { border-color: var(--accent); color: var(--text); }
+    .copy-email-btn:hover {
+      color: var(--text); background: #202028; transform: translateY(-2px);
+      box-shadow: inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.4), 0 6px 0 #05050a;
+    }
+    .copy-email-btn:active {
+      transform: translateY(3px);
+      box-shadow: inset -2px -2px 0 rgba(0,0,0,0.3), inset 2px 2px 0 rgba(0,0,0,0.4), 0 1px 0 #05050a;
+    }
     .copy-icon-wrap { position: relative; width: 16px; height: 16px; flex-shrink: 0; }
     .copy-icon-wrap svg { position: absolute; inset: 0; width: 16px; height: 16px; transition: opacity 0.2s ease, transform 0.2s ease; }
     .icon-check { opacity: 0; transform: scale(0.5); color: var(--green); }
@@ -639,6 +650,7 @@
     <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
   </button>
   <ul class="nav-links" id="navLinksList">
+    <li><a href="minecraft/index.html">3D Portfolio</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -668,7 +680,7 @@
     <p class="hero-sub"><span class="typing"></span></p>
 
     <p class="hero-headline">
-      Penetration Tester &amp; Blue Team Specialist with <strong style="color:var(--text)">48 industry certifications</strong>,
+      Penetration Tester &amp; Blue Team Specialist with <strong style="color:var(--text)">36 industry certifications</strong>,
       including all 13 OffSec certs. Ranked <strong style="color:#818cf8">19th globally &amp; 1st in Iraq</strong>
       at HTB Cyber Apocalypse 2025. Discovered <strong style="color:var(--orange)">500+ vulnerabilities</strong>
       across HackerOne, global bug bounty platforms, and local/regional companies.
@@ -679,6 +691,10 @@
     </p>
 
     <div class="hero-cta">
+      <a href="minecraft/index.html" class="btn btn-primary">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16v16H4z"/><path d="M9 4v16M4 9h5M4 15h5"/></svg>
+        Enter 3D Portfolio
+      </a>
       <a href="#projects" class="btn btn-primary">
         <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
         Projects
@@ -689,7 +705,7 @@
       </a>
       <a href="#certifications" class="btn btn-ghost">
         <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-        48 Certifications
+        36 Certifications
       </a>
     </div>
 
@@ -710,7 +726,7 @@
 
     <div class="stats-bar reveal">
       <div class="stat-card">
-        <div class="stat-number">48</div>
+        <div class="stat-number">36</div>
         <div class="stat-label">Certifications</div>
       </div>
       <div class="stat-card">
@@ -1373,7 +1389,7 @@
   <div class="container">
     <div class="reveal">
       <p class="section-label">// credentials</p>
-      <h2 class="section-title">48 <span>Certifications</span></h2>
+      <h2 class="section-title">36 <span>Certifications</span></h2>
     </div>
 
     <div class="cert-groups">
@@ -1690,6 +1706,14 @@
               <div class="cert-status">Credly Verified</div>
             </div>
           </a>
+          <div class="cert-card" style="cursor:default">
+            <div class="cert-logo" style="background:rgba(52,211,153,0.08);color:#34d399"><svg class="cert-badge-icon" viewBox="0 0 24 24"><use href="#certBadgeIcon"></use></svg></div>
+            <div class="cert-info">
+              <div class="cert-name">CAP &mdash; Certified AppSec Practitioner</div>
+              <div class="cert-issuer">The SecOps Group</div>
+              <div class="cert-status">Verified</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1917,33 +1941,6 @@
     });
   })();
 
-  // Rolling text on button hover
-  (function() {
-    function rollify(el) {
-      Array.from(el.childNodes).forEach(node => {
-        if (node.nodeType !== Node.TEXT_NODE || !node.textContent.trim()) return;
-        const wrap = document.createElement('span');
-        wrap.className = 'roll-text';
-        let i = 0;
-        for (const ch of node.textContent) {
-          if (ch === ' ') { const sp = document.createElement('span'); sp.className = 'roll-space'; wrap.appendChild(sp); continue; }
-          const outer = document.createElement('span');
-          outer.className = 'roll-char';
-          const inner = document.createElement('span');
-          inner.className = 'roll-char-inner';
-          inner.style.setProperty('--i', i++);
-          const a = document.createElement('span'); a.textContent = ch;
-          const b = document.createElement('span'); b.textContent = ch;
-          inner.appendChild(a); inner.appendChild(b);
-          outer.appendChild(inner);
-          wrap.appendChild(outer);
-        }
-        el.replaceChild(wrap, node);
-      });
-    }
-    document.querySelectorAll('.btn').forEach(rollify);
-  })();
-
   // Cursor-tracking spotlight on project/cert cards
   (function() {
     document.querySelectorAll('.proj-card, .cert-card').forEach(card => {
@@ -1983,7 +1980,11 @@
     nav.addEventListener('mouseleave', () => moveTo(activeLink));
     window.addEventListener('resize', () => moveTo(activeLink));
 
-    const sections = links.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+    const sections = links
+      .map(l => l.getAttribute('href'))
+      .filter(href => href.startsWith('#'))
+      .map(href => document.querySelector(href))
+      .filter(Boolean);
     const spy = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -2118,8 +2119,8 @@
       { out: '[*] Meterpreter session 1 opened' },
       { cmd: 'cat /root/proof.txt' },
       { out: 'OSCP{purple_team_ops}' },
-      { cmd: 'echo "$(whoami) --certs 48 --status open_to_work"' },
-      { out: 'yousef-khudher --certs 48 --status open_to_work' },
+      { cmd: 'echo "$(whoami) --certs 36 --status open_to_work"' },
+      { out: 'yousef-khudher --certs 36 --status open_to_work' },
     ];
 
     let i = 0;
