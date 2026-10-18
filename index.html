@@ -293,6 +293,14 @@
       padding: 0.15rem 0.6rem; font-size: 0.75rem; color: var(--muted); font-family: 'JetBrains Mono', monospace;
     }
 
+    .tl-subroles { margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem; }
+    .tl-subrole {
+      border-left: 2px solid rgba(129,140,248,0.3); padding-left: 1rem;
+    }
+    .tl-subrole-role { font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 0.1rem; }
+    .tl-subrole-date { font-size: 0.78rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; margin-bottom: 0.45rem; }
+    .tl-subrole-desc { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.5rem; }
+
     /* ─── SKILLS ─── */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
     .skill-cat {
@@ -682,7 +690,7 @@
     <p class="hero-headline">
       Penetration Tester &amp; Blue Team Specialist with <strong style="color:var(--text)">36 industry certifications</strong>,
       including all 13 OffSec certs. Ranked <strong style="color:#818cf8">19th globally &amp; 1st in Iraq</strong>
-      at HTB Cyber Apocalypse 2025. Discovered <strong style="color:var(--orange)">500+ vulnerabilities</strong>
+      at HTB Cyber Apocalypse 2025. Discovered <strong style="color:var(--orange)">570+ vulnerabilities</strong>
       across HackerOne, global bug bounty platforms, and local/regional companies.
     </p>
 
@@ -738,7 +746,7 @@
         <div class="stat-label">Academic Security Projects</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number orange">500+</div>
+        <div class="stat-number orange">570+</div>
         <div class="stat-label">Vulnerabilities Found</div>
       </div>
     </div>
@@ -761,8 +769,11 @@
         <p>
           Through bug bounty programs on <strong>HackerOne</strong> and other global platforms —
           as well as direct engagements with <strong>local and regional companies in Iraq and the MENA region</strong> —
-          I have discovered and responsibly disclosed <strong>500+ vulnerabilities</strong>,
+          I have discovered and responsibly disclosed <strong>570+ vulnerabilities</strong>,
           ranging from Critical severity to Medium, across real-world web applications and infrastructure.
+          This includes <strong>50+ vulnerabilities</strong> found in Iraqi companies such as
+          <strong>Codion Solutions</strong>, <strong>Linkchi for Software Solutions</strong>,
+          and other private companies — responsibly disclosed to help strengthen local digital security.
         </p>
         <p>
           Beyond offensive work, I am ISO/IEC 27001 &amp; 27701 Lead Auditor certified,
@@ -817,8 +828,47 @@
     </div>
     <div class="timeline">
 
+      <div class="tl-item purple-dot reveal">
+        <div class="tl-company">Private Company — Confidential</div>
+        <div class="tl-date" style="margin-bottom:0.8rem;">2025 – Present &nbsp;·&nbsp; Full-time</div>
+        <div class="tl-subroles">
+
+          <div class="tl-subrole">
+            <div class="tl-subrole-role">Security Operations Leader (Purple Team) – Co-Founder</div>
+            <div class="tl-subrole-date">May 2026 – Present &nbsp;·&nbsp; 6 mos</div>
+            <div class="tl-subrole-desc">
+              Co-founding and leading security operations, driving purple team strategy, overseeing
+              adversary emulation programs, and building out detection and response capabilities from
+              the ground up. Discovered and responsibly disclosed <strong>50+ vulnerabilities</strong>
+              across local Iraqi companies including <strong>Codion Solutions</strong>,
+              <strong>Linkchi for Software Solutions</strong>, and other private companies.
+            </div>
+            <div class="tl-tags">
+              <span class="tl-tag">Purple Team</span><span class="tl-tag">Security Leadership</span>
+              <span class="tl-tag">Co-Founder</span><span class="tl-tag">Adversary Emulation</span>
+              <span class="tl-tag">Vulnerability Disclosure</span>
+            </div>
+          </div>
+
+          <div class="tl-subrole">
+            <div class="tl-subrole-role">Application Security Specialist / Penetration Tester / Testing Team Leader</div>
+            <div class="tl-subrole-date">2025 – Present &nbsp;·&nbsp; Full-time</div>
+            <div class="tl-subrole-desc">
+              Leading application security testing engagements as both a hands-on penetration tester
+              and testing team leader — assessing web/mobile applications, coordinating test coverage
+              across the team, and reporting findings to stakeholders.
+            </div>
+            <div class="tl-tags">
+              <span class="tl-tag">Application Security</span><span class="tl-tag">Penetration Testing</span>
+              <span class="tl-tag">Team Leadership</span><span class="tl-tag">Web / Mobile AppSec</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <div class="tl-item reveal">
-        <div class="tl-company">Cybersecurity Industry</div>
+        <div class="tl-company">Ministry of Interior — Iraq</div>
         <div class="tl-role">Cybersecurity Specialist – Purple Team</div>
         <div class="tl-date">Dec 2024 – Present &nbsp;·&nbsp; Full-time</div>
         <div class="tl-desc">
@@ -830,21 +880,6 @@
           <span class="tl-tag">Red Team</span><span class="tl-tag">Blue Team</span>
           <span class="tl-tag">MITRE ATT&CK</span><span class="tl-tag">SIEM / ELK</span>
           <span class="tl-tag">Threat Intel</span>
-        </div>
-      </div>
-
-      <div class="tl-item purple-dot reveal">
-        <div class="tl-company">Private Company — Confidential</div>
-        <div class="tl-role">Application Security Specialist / Penetration Tester / Testing Team Leader</div>
-        <div class="tl-date">2025 – Present &nbsp;·&nbsp; Full-time</div>
-        <div class="tl-desc">
-          Leading application security testing engagements as both a hands-on penetration tester
-          and testing team leader — assessing web/mobile applications, coordinating test coverage
-          across the team, and reporting findings to stakeholders.
-        </div>
-        <div class="tl-tags">
-          <span class="tl-tag">Application Security</span><span class="tl-tag">Penetration Testing</span>
-          <span class="tl-tag">Team Leadership</span><span class="tl-tag">Web / Mobile AppSec</span>
         </div>
       </div>
 
@@ -1349,7 +1384,7 @@
       <div class="ctf-card gold reveal" style="grid-column: span 2;">
         <div style="display:flex; align-items:flex-start; gap:1.5rem; flex-wrap:wrap;">
           <div>
-            <div class="ctf-rank gold-rank" style="font-size:2.5rem;">500+</div>
+            <div class="ctf-rank gold-rank" style="font-size:2.5rem;">570+</div>
             <div class="ctf-name" style="font-size:1rem;">Vulnerabilities Reported</div>
             <div class="ctf-detail" style="margin-top:0.4rem;">HackerOne &middot; Other Global Platforms &middot; Local &amp; Regional Companies (Iraq)</div>
           </div>
@@ -1367,8 +1402,8 @@
               <div style="font-size:0.75rem; color:var(--muted);">+ other platforms</div>
             </div>
             <div style="background:rgba(52,211,153,0.06); border:1px solid rgba(52,211,153,0.15); border-radius:8px; padding:0.7rem 1rem;">
-              <div style="font-size:1.2rem; font-weight:900; color:var(--green); font-family:monospace;">Local / MENA</div>
-              <div style="font-size:0.75rem; color:var(--muted);">Regional companies</div>
+              <div style="font-size:1.2rem; font-weight:900; color:var(--green); font-family:monospace;">50+ Local</div>
+              <div style="font-size:0.75rem; color:var(--muted);">Iraqi companies (Codion · Linkchi · others)</div>
             </div>
           </div>
         </div>
