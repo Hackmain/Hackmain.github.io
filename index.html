@@ -231,7 +231,7 @@
 
     /* ─── STATS ─── */
     .stats-bar {
-      display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; margin-bottom: 4rem;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 4rem;
     }
     @media(max-width:1100px){ .stats-bar { grid-template-columns: repeat(3,1fr); } }
     @media(max-width:768px){ .stats-bar { grid-template-columns: repeat(2,1fr); } }
@@ -759,6 +759,10 @@
         <div class="stat-number green" style="font-size:1.7rem">60%&rarr;15%</div>
         <div class="stat-label">SOC False Positives Cut</div>
       </div>
+      <div class="stat-card">
+        <div class="stat-number orange" style="font-size:1.7rem">2d&rarr;3h</div>
+        <div class="stat-label">Recon Time via Custom Scanners</div>
+      </div>
     </div>
 
     <div class="about-grid">
@@ -1272,7 +1276,7 @@
         <div class="proj-top">
           <span class="proj-name">Open-RedirIN</span>
         </div>
-        <p class="proj-desc">Open-source detection tool for open redirect vulnerabilities in web applications. Starred by the community.</p>
+        <p class="proj-desc">Open-source detection tool for open redirect vulnerabilities in web applications. Used in live engagements as part of the scanner suite that cuts reconnaissance from ~2 days to ~3 hours.</p>
         <div class="proj-footer">
           <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
           <a class="proj-link" href="https://github.com/Hackmain/Open-RedirIN" target="_blank" rel="noopener">GitHub &#8599;</a>
@@ -1294,7 +1298,7 @@
         <div class="proj-top">
           <span class="proj-name">Wadvancescanner</span>
         </div>
-        <p class="proj-desc">Advanced web application scanner — discovers open ports, enumerates vulnerabilities, and surfaces detailed information from any web target.</p>
+        <p class="proj-desc">Advanced web application scanner — discovers open ports, enumerates vulnerabilities, and surfaces detailed information from any web target. Core of the recon suite used on client assessments.</p>
         <div class="proj-footer">
           <div class="proj-lang"><span class="lang-dot py"></span> Python</div>
           <a class="proj-link" href="https://github.com/Hackmain/Wadvancescanner" target="_blank" rel="noopener">GitHub &#8599;</a>
