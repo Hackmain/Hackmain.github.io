@@ -231,8 +231,9 @@
 
     /* ─── STATS ─── */
     .stats-bar {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 4rem;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; margin-bottom: 4rem;
     }
+    @media(max-width:1100px){ .stats-bar { grid-template-columns: repeat(3,1fr); } }
     @media(max-width:768px){ .stats-bar { grid-template-columns: repeat(2,1fr); } }
     .stat-card {
       position: relative; overflow: hidden;
@@ -689,7 +690,7 @@
 
     <p class="hero-headline">
       Penetration Tester &amp; Blue Team Specialist with <strong style="color:var(--text)">36 industry certifications</strong>,
-      including all 13 OffSec certs. Ranked <strong style="color:#818cf8">19th globally &amp; 1st in Iraq</strong>
+      including all 14 OffSec certs. Ranked <strong style="color:#818cf8">19th globally &amp; 1st in Iraq</strong>
       at HTB Cyber Apocalypse 2025. Discovered <strong style="color:var(--orange)">570+ vulnerabilities</strong>
       across HackerOne, global bug bounty platforms, and local/regional companies.
     </p>
@@ -749,6 +750,10 @@
         <div class="stat-number orange">570+</div>
         <div class="stat-label">Vulnerabilities Found</div>
       </div>
+      <div class="stat-card">
+        <div class="stat-number purple">341+</div>
+        <div class="stat-label">Red &amp; Blue Team Reports</div>
+      </div>
     </div>
 
     <div class="about-grid">
@@ -763,7 +768,7 @@
         </p>
         <p>
           My expertise spans <strong>penetration testing, web exploitation, wireless attacks, threat hunting,
-          incident response, cloud security, and DevSecOps</strong>. I hold all 13 OffSec certifications —
+          incident response, cloud security, and DevSecOps</strong>. I hold all 14 OffSec certifications —
           a rare achievement — alongside 35+ additional certs from CyberWarfare Labs, Cisco, and other bodies.
         </p>
         <p>
@@ -807,7 +812,7 @@
           <div>
             <div class="edu-degree">Bachelor of Engineering</div>
             <div class="edu-school">University of Mosul</div>
-            <div class="edu-date">Computer Engineering &nbsp;|&nbsp; 2019 – 2023</div>
+            <div class="edu-date">Computer Engineering</div>
             <div class="edu-note">
               Final-year project: <strong>IDS (Intrusion Detection System)</strong> — monitored network traffic,
               detected ARP spoofing, flooding, TCP/TFTP anomalies using ML-enhanced algorithms.
@@ -834,19 +839,21 @@
         <div class="tl-subroles">
 
           <div class="tl-subrole">
-            <div class="tl-subrole-role">Security Operations Leader (Purple Team) – Co-Founder</div>
+            <div class="tl-subrole-role">Security Operations Leader (Red Team) – Co-Founder</div>
             <div class="tl-subrole-date">May 2026 – Present &nbsp;·&nbsp; 6 mos</div>
             <div class="tl-subrole-desc">
-              Co-founding and leading security operations, driving purple team strategy, overseeing
-              adversary emulation programs, and building out detection and response capabilities from
-              the ground up. Discovered and responsibly disclosed <strong>50+ vulnerabilities</strong>
+              Co-founded the venture and lead a <strong>team of 4–5 security engineers</strong> — directing red team
+              strategy and full-scope adversary emulation engagements across initial access, privilege escalation,
+              lateral movement, and post-exploitation. Building offensive tooling and attack infrastructure
+              including C2 frameworks, redirectors, and custom payloads for OPSEC-safe operations.
+              Discovered and responsibly disclosed <strong>50+ vulnerabilities</strong>
               across local Iraqi companies including <strong>Codion Solutions</strong>,
               <strong>Linkchi for Software Solutions</strong>, and other private companies.
             </div>
             <div class="tl-tags">
-              <span class="tl-tag">Purple Team</span><span class="tl-tag">Security Leadership</span>
+              <span class="tl-tag">Red Team</span><span class="tl-tag">Security Leadership</span>
               <span class="tl-tag">Co-Founder</span><span class="tl-tag">Adversary Emulation</span>
-              <span class="tl-tag">Vulnerability Disclosure</span>
+              <span class="tl-tag">C2 / Attack Infra</span><span class="tl-tag">Vulnerability Disclosure</span>
             </div>
           </div>
 
@@ -869,17 +876,20 @@
 
       <div class="tl-item reveal">
         <div class="tl-company">Ministry of Interior — Iraq</div>
-        <div class="tl-role">Cybersecurity Specialist – Purple Team</div>
+        <div class="tl-role">Cybersecurity Specialist – Purple Team &middot; SOC Engineer</div>
         <div class="tl-date">Dec 2024 – Present &nbsp;·&nbsp; Full-time</div>
         <div class="tl-desc">
-          Bridging red and blue team operations as a Purple Team specialist.
-          Conducting adversary simulations, validating defensive controls, and strengthening
-          detection coverage across the organization.
+          Securing a national-scale environment spanning <strong>1,000+ local and public-facing systems</strong>,
+          <strong>100+ servers</strong>, thousands of endpoints, and <strong>millions of end users</strong>.
+          Delivered <strong>341+ red team and blue team assessment reports</strong> to date — covering offensive
+          findings, detection gap analysis, and remediation guidance. Operating as SOC engineer and cross-layer
+          security advisor across network, endpoint, application, and infrastructure defense, validating detection
+          coverage against MITRE ATT&amp;CK.
         </div>
         <div class="tl-tags">
           <span class="tl-tag">Red Team</span><span class="tl-tag">Blue Team</span>
-          <span class="tl-tag">MITRE ATT&CK</span><span class="tl-tag">SIEM / ELK</span>
-          <span class="tl-tag">Threat Intel</span>
+          <span class="tl-tag">SOC Engineering</span><span class="tl-tag">MITRE ATT&CK</span>
+          <span class="tl-tag">SIEM / ELK</span><span class="tl-tag">Threat Intel</span>
         </div>
       </div>
 
@@ -1431,7 +1441,7 @@
 
       <!-- OffSec -->
       <div class="reveal">
-        <div class="cert-group-label"><h3>OffSec — All 13 Certs</h3></div>
+        <div class="cert-group-label"><h3>OffSec — All 14 Certs</h3></div>
         <div class="certs-grid">
           <a class="cert-card" href="https://credentials.offsec.com/profile/yousifhayder271359/wallet" target="_blank" rel="noopener">
             <div class="cert-logo badge-real"><img src="assets/certs/oscc-sjd-badge.svg" alt="OSCC-SJD badge" loading="lazy" /></div>
